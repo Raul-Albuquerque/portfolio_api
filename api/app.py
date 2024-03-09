@@ -2,6 +2,8 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
+from mock_data.about import about
+
 livros = [
   {
     'id': 1,
@@ -24,6 +26,10 @@ livros = [
 @app.route('/livros', methods=['GET'])
 def obter_livros():
     return jsonify(livros)
+
+@app.route('/about', methods=['GET'])
+def get_about():
+    return jsonify(about)
 
 
 if __name__ == '__main__':
