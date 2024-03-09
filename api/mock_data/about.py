@@ -1,3 +1,5 @@
+# _*_ coding: utf-8 _*_
+
 about = {
   "fullname": "RaulAlbuquerque",
   "name": "raul",
@@ -40,3 +42,5 @@ about = {
     "capacidade de trabalhar em equipe"
   ]
 }
+
+print(about)
