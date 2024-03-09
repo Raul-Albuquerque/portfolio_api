@@ -1,27 +1,30 @@
 from flask import Flask, jsonify
 
-from mock_data.about import about
-from mock_data.contacts import contacts
-from mock_data.courses import courses
-from mock_data.projects import projects
-
 app = Flask(__name__)
 
-@app.route('/about')
-def get_about():
-  return jsonify(about)
+livros = [
+  {
+    'id': 1,
+    'titulo': 'O Senhor dos Aneis -  A Sociedade do Anel',
+    'autor': 'J.R.R. Tolkien'
+  },
+  {
+    'id': 2,
+    'titulo': 'Harry Potter e a Pedra Filosofal',
+    'autor': 'J.K. Howling'
+  },
+  {
+    'id': 3,
+    'titulo': 'Habitos Atomicos',
+    'autor': 'James Clear'
+  },
+]
 
-@app.route('/contacts')
-def get_contacts():
-  return jsonify(contacts)
+# Consultar(todos)
+@app.route('/livros', methods=['GET'])
+def obter_livros():
+    return jsonify(livros)
 
-@app.route('/courses')
-def get_courses():
-  return jsonify(courses)
-
-@app.route('/projects')
-def get_projects():
-  return jsonify(projects)
 
 if __name__ == '__main__':
   app.run(debug=True)
