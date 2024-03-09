@@ -25,4 +25,6 @@ def get_projects():
 
 
 if __name__ == '__main__':
+  import sys
+  sys.setdefaultencoding('utf-8')
   app.run(debug=True)
