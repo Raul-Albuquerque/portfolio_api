@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 about = {
   "fullname": "RaulAlbuquerque",
   "name": "raul",

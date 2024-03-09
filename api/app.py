@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 
 from api.mock_data.about import about
 from api.mock_data.contacts import contacts
@@ -9,7 +10,7 @@ from api.mock_data.projects import projects
 
 @app.route('/about', methods=['GET'])
 def get_about():
-    return jsonify(about, ensure_ascii=False)
+    return jsonify(about)
 
 @app.route('/contacts', methods=['GET'])
 def get_contacts():
