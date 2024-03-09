@@ -9,7 +9,7 @@ from api.mock_data.projects import projects
 
 @app.route('/about', methods=['GET'])
 def get_about():
-    return jsonify(about)
+    return jsonify(about, ensure_ascii=False)
 
 @app.route('/contacts', methods=['GET'])
 def get_contacts():
@@ -25,6 +25,4 @@ def get_projects():
 
 
 if __name__ == '__main__':
-  import sys
-  sys.setdefaultencoding('utf-8')
   app.run(debug=True)
